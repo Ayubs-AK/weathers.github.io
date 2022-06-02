@@ -19,7 +19,7 @@ function Weather() {
 
   const Api = {
     /*API*/ key: "4cb554d42e2bcd686d02435cf6db30ac",
-    url: "http://api.openweathermap.org/data/2.5/weather?q=",
+    url: "https://api.openweathermap.org/data/2.5/weather?q=",
   };
 
   const fetchProducts = async () => {
