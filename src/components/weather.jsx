@@ -122,7 +122,7 @@ function Weather() {
                 <input
                   id="searchQueryInput"
                   type="text"
-                  placeholder="Search"
+                  placeholder="Search..."
                   value={query}
                   onChange={handleChange}
                 />
@@ -136,7 +136,7 @@ function Weather() {
             <div className="break"></div>
             {weathers.sys === undefined ? (
               <div className="output-home">
-                <ul className="output-home">Please enter a city</ul>
+                <ul className="output-home">Enter city in search bar</ul>
               </div>
             ) : (
               <div className="output-main">

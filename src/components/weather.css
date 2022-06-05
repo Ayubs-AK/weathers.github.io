@@ -154,4 +154,20 @@ ul {
   font-weight: bold;
   font-size: clamp(0.75rem, 1vw, 1rem);
 }
+
+::-webkit-input-placeholder {
+  color: #343434;
+}
+
+:-ms-input-placeholder {
+  color: #343434;
+}
+
+::-ms-input-placeholder {
+  color: #343434;
+}
+
+::placeholder {
+  color: #343434;
+}
 /*# sourceMappingURL=weather.css.map */
