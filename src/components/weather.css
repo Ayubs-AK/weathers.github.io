@@ -38,6 +38,12 @@ body {
   transition: background-image 500ms ease-in-out;
 }
 
+@media only screen and (max-height: 900px) {
+  .background {
+    min-height: 28rem;
+  }
+}
+
 .break {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
@@ -76,6 +82,11 @@ body {
 .output-weather,
 .output-home {
   margin-left: -2rem;
+}
+
+.output-home {
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  color: black;
 }
 
 .output-temp {
@@ -124,16 +135,23 @@ body {
 }
 
 ul {
-  font-size: 20px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   color: whitesmoke;
   font-family: Verdana;
 }
 
 #city {
-  font-size: xx-large;
+  font-size: clamp(2rem, 3vw, 3rem);
 }
 
 #temp {
-  font-size: 50px;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.error-response {
+  font-family: Verdana;
+  color: #880808;
+  font-weight: bold;
+  font-size: clamp(0.75rem, 1vw, 1rem);
 }
 /*# sourceMappingURL=weather.css.map */

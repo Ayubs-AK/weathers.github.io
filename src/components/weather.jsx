@@ -14,25 +14,46 @@ import Backgroundmoon from "../components/moon.jpg";
 import Backgroundsun from "../components/sun.jpg";
 
 function Weather() {
-  const [query, setQuery] = useState("Delhi"); /*States*/
+  const [query, setQuery] = useState(""); /*States*/
   const [weathers, setWeather] = useState({});
-
+  const [errors, setErrors] = useState(""); //for contact form error display
+  console.log("hh", errors.length);
   const Api = {
     /*API*/ key: "4cb554d42e2bcd686d02435cf6db30ac",
     url: "https://api.openweathermap.org/data/2.5/weather?q=",
   };
 
   const fetchProducts = async () => {
-    /*Function to fetch data from OpenWeather API*/
-    const response = await fetch(
-      Api.url + query + "&units=metric&appid=" + Api.key
-    );
-    const data = await response.json();
-    setWeather(data);
-  };
+    const errorz = validateInfo();
+    console.log("main", errorz);
+    if (errorz === undefined) {
+      console.log("no error");
 
+      /*Function to fetch data from OpenWeather API*/
+      const response = await fetch(
+        Api.url + query + "&units=metric&appid=" + Api.key
+      );
+      const data = await response.json();
+      setWeather(data);
+      setErrors("");
+    } else {
+      console.log("error");
+    }
+  };
+  const validateInfo = () => {
+    let erroz;
+    if (!query.trim()) {
+      erroz = "City required";
+      setErrors("City required");
+    } else if (!/^[A-Za-z ]+$/.test(query.trim())) {
+      erroz = "Enter a valid City";
+      setErrors("Enter a valid City");
+    }
+    return erroz;
+  };
   const handleChange = (e) => {
     /*Function to handle user input and set query state*/
+
     setQuery(e.target.value);
   };
   let handleIcon = (a, e) => {
@@ -109,12 +130,13 @@ function Weather() {
                   {/*Search Button*/}
                   <FontAwesomeIcon icon={faSearch} />
                 </button>
+                {errors && <p className="error-response">{errors}</p>}
               </form>
             </div>
             <div className="break"></div>
             {weathers.sys === undefined ? (
               <div className="output-home">
-                <ul>Select City</ul>
+                <ul className="output-home">Please enter a city</ul>
               </div>
             ) : (
               <div className="output-main">
