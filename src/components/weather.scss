@@ -73,11 +73,16 @@ body {
 
 #searchQueryInput {
   margin-top: 20%;
-  min-height: 1.5rem;
+  min-height: 2rem;
   background: #928787;
   border: none;
   border-radius: 1.625rem;
   font-size: large;
+}
+@media only screen and (max-height: 900px) {
+  #searchQueryInput {
+    min-height: 1.5rem;
+  }
 }
 #searchQueryInput:hover {
   background: #a7a3a3;
