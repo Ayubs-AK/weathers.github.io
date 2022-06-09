@@ -61,6 +61,12 @@ body {
   margin-top: 2%;
 }
 
+@media only screen and (max-width: 970px) {
+  .icom {
+    margin-left: 2rem;
+  }
+}
+
 .search {
   margin-top: 1%;
 }
