@@ -136,7 +136,7 @@ function Weather() {
             <div className="break"></div>
             {weathers.sys === undefined ? (
               <div className="output-home">
-                <ul className="output-home">Enter city in search bar</ul>
+                <ul className="output-home">Enter city in search</ul>
               </div>
             ) : (
               <div className="output-main">
