@@ -8,8 +8,12 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
 
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 body {
   background-color: #372f2f;
 }
@@ -23,6 +27,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   transition: background-image 500ms ease-in-out;
+  animation: fadeIn 1s 0.3s backwards;
 }
 @media only screen and (max-height: 900px) {
   .background {

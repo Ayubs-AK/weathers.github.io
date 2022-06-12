@@ -17,6 +17,24 @@
       flex-wrap: wrap;
 }
 
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   background-color: #372f2f;
 }
@@ -36,6 +54,8 @@ body {
   background-size: cover;
   -webkit-transition: background-image 500ms ease-in-out;
   transition: background-image 500ms ease-in-out;
+  -webkit-animation: fadeIn 1s 0.3s backwards;
+          animation: fadeIn 1s 0.3s backwards;
 }
 
 @media only screen and (max-height: 900px) {
