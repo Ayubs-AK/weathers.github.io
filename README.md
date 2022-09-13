@@ -15,6 +15,8 @@ Project was created using:
 * CSS
 * HTML
 * OpenWeather API
+* Figma
+* Netlify
 
 
 ## Setup
